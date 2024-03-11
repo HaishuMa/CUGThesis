@@ -1,11 +1,11 @@
 # CUGThesis
 
-这是中国地质大学（武汉）研究生学位论文的 TeX 模板.
+这是中国地质大学（武汉）自动化学院课程报告自作模版
 
 更详细的内容请参考 demo.pdf 。
 
 # Author
 
-王震宇
+马海书
 
-E-mail: zhenyuwang94@gmail.com
+E-mail: mahaishu@cug.edu.cn
