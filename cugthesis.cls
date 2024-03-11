@@ -208,7 +208,7 @@
 \fi
 \ifcug@bachelor %在这里修改英文页
     \@titlelogo{网络化过程控制系统课程报告}
-    \@entitlelogo{\setmainfont{Times New Roman} A course report Submitted to School of Automation, China University of Geosciences}
+    \@entitlelogo{A course report Submitted to School of Automation, China University of Geosciences}
     \renewcommand{\cug@degree@cn}{学士}
     \renewcommand{\cug@degree@en}{Bachelor}
 \fi
@@ -403,18 +403,16 @@
 }
 \newcommand{\cug@make@enabstract}{%
     % \cleardoublepage % 加入空白页
-    \setmainfont{Times New Roman}
     \vspace*{2ex}%
     \begin{center}
-    {\sffamily\bfseries\cug@sanhao Abstract}
+    {\sffamily\bfseries\setmainfont{Times New Roman}\cug@sanhao Abstract}
     \end{center}\par
-    {\cug@xiaosi
-    \the\cug@enabstract 
-    }
+    {\setmainfont{Times New Roman}
+    \cug@xiaosi
+    \the\cug@enabstract}
     \vskip .5\baselineskip 
-    \setmainfont{Times New Roman}
     \noindent
-    {\cug@xiaosi {\bfseries Keywords:}\hskip0.5em \the\cug@enkeywords}
+    {\setmainfont{Times New Roman}\cug@xiaosi {\bfseries Keywords:}\setmainfont{Times New Roman}\hskip0.5em \the\cug@enkeywords}
     \clearpage 
 }
 %%%%%%%%%%%%%%%% List of Contents Format %%%%%%%%%%%%%%%%%%
