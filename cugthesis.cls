@@ -208,7 +208,7 @@
 \fi
 \ifcug@bachelor %在这里修改英文页
     \@titlelogo{网络化过程控制系统课程报告}
-    \@entitlelogo{A course report Submitted to School of Automation, China University of Geosciences}
+    \@entitlelogo{\setmainfont{Times New Roman} A course report Submitted to School of Automation, China University of Geosciences}
     \renewcommand{\cug@degree@cn}{学士}
     \renewcommand{\cug@degree@en}{Bachelor}
 \fi
@@ -223,7 +223,7 @@
         \cug@info@table@item{指导教师:}{\cug@teacher}
         \ifx\cug@teachert\empty
         \else
-            \cug@info@table@item{\phantom{指导教师}}{\cug@teachert}
+            \cug@info@table@item{\phantom{指导教师:}}{\cug@teachert}
         \fi
         \ifcug@masterpronofulltime
             \cug@info@table@item{企业导师:}{\cug@corporatementor}
@@ -231,11 +231,12 @@
         \cug@info@table@item{培养单位:}{\cug@educatingunit}
     \end{tabular}
 }
-\newcommand{\cug@info@entable}{%
-    \begin{tabular}{>{\raggedleft}p{.4\textwidth}p{.45\textwidth}p{.15\textwidth}}
+\newcommand{\cug@info@entable}{% 调整英文信息的宽度{xxem}
+    \begin{tabular}{> 
+    {\raggedleft}p{.4\textwidth}p{.45\textwidth}p{.15\textwidth}}
         \cug@degree@en\ Candidate:\, & \cug@enauthor &\\
         \cug@info@entable@majorname:\,& \cug@enmajor &\\
-        Supervisor:\,& \ifx\cug@supervisort\empty\cug@supervisor\else\multirow[t]{2}{8em}{\cug@supervisor \\\cug@supervisort}\fi &
+        Supervisor:\,& \ifx\cug@supervisort\empty\cug@supervisor\else\multirow[t]{2}{12em}{\cug@supervisor \\\cug@supervisort}\fi &
     \end{tabular}
 }
 
@@ -267,6 +268,7 @@
 
 \newcommand{\cug@make@entitle}{%
     % \cleardoublepage  %title页后跟一个空白页
+    \setmainfont{Times New Roman}
     \thispagestyle{empty}
     \begin{center}
         \leavevmode
@@ -401,6 +403,7 @@
 }
 \newcommand{\cug@make@enabstract}{%
     % \cleardoublepage % 加入空白页
+    \setmainfont{Times New Roman}
     \vspace*{2ex}%
     \begin{center}
     {\sffamily\bfseries\cug@sanhao Abstract}
@@ -409,6 +412,7 @@
     \the\cug@enabstract 
     }
     \vskip .5\baselineskip 
+    \setmainfont{Times New Roman}
     \noindent
     {\cug@xiaosi {\bfseries Keywords:}\hskip0.5em \the\cug@enkeywords}
     \clearpage 
