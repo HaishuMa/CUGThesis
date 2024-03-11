@@ -206,9 +206,9 @@
     \renewcommand{\cug@info@table@majorname}{专业学位类型}
     \renewcommand{\cug@info@entable@majorname}{Professional Degree Type}
 \fi
-\ifcug@bachelor
-    \@titlelogo{学士学位论文}
-    \@entitlelogo{A Dissertation Submitted to China University of Geosciences \\ For the Bachelor Degree of \\ \cug@degree@name@en}
+\ifcug@bachelor %在这里修改英文页
+    \@titlelogo{网络化过程控制系统课程报告}
+    \@entitlelogo{A course report Submitted to School of Automation, China University of Geosciences}
     \renewcommand{\cug@degree@cn}{学士}
     \renewcommand{\cug@degree@en}{Bachelor}
 \fi
@@ -250,7 +250,7 @@
                 {\cug@sanhao{学校代码: 10491 \hfill 研究生学号: \cug@studentid }}
             \fi
             \vspace*{2\baselineskip}
-            {\par \cug@yihao \bfseries 中国地质大学\\ \cug@@titlelogo \par}
+            {\par \cug@yihao \bfseries 中国地质大学自动化学院\\ \cug@@titlelogo \par} %这里改单位名称
             \vspace*{2.5\baselineskip}
             {\par \cug@erhao \sffamily \bfseries \@title \par} %
             \vfill
@@ -259,14 +259,14 @@
             {\cug@sanhao{\@date}}%
             \vspace*{\baselineskip}
         \end{center}
-        \clearpage
+        % \clearpage %title页后跟一个空白页
         \thispagestyle{empty}
     \end{titlepage}
 }
 %\renewcommand\arraystretch{1} % 将行距还原
 
 \newcommand{\cug@make@entitle}{%
-    \cleardoublepage 
+    % \cleardoublepage  %title页后跟一个空白页
     \thispagestyle{empty}
     \begin{center}
         \leavevmode
@@ -278,8 +278,8 @@
         {\cug@sanhao \cug@info@entable}
         \vfill
         {\cug@sanhao 
-            China University of Geosciences
-
+            School of Automation \\
+            China University of Geosciences \\
             Wuhan 430074 P.R. China
         }
         \vspace*{\baselineskip}
@@ -334,7 +334,7 @@
             \fi
         \fi
     \fi
-    \cleardoublepage
+    \cleardoublepage % 显示空白页
     \vskip \baselineskip
     \ifcug@bachelor
         {\sffamily\bfseries \cug@sanhao{中国地质大学（武汉）本科生学位论文\cug@@extrapages@type}}
@@ -386,7 +386,7 @@
 }
 
 \newcommand{\cug@make@abstract}{%
-    \cleardoublepage 
+    % \cleardoublepage  % 加入空白页
     \vspace*{2ex}%
     \begin{center}
     {\sffamily\bfseries\cug@sanhao 摘\quad 要}
@@ -400,7 +400,7 @@
     \clearpage 
 }
 \newcommand{\cug@make@enabstract}{%
-    \cleardoublepage 
+    % \cleardoublepage % 加入空白页
     \vspace*{2ex}%
     \begin{center}
     {\sffamily\bfseries\cug@sanhao Abstract}
@@ -450,10 +450,10 @@
     \fancyfoot[C]{\cug@wuhao \thepage}
     \renewcommand{\headrulewidth}{0pt}
 }
-\fancypagestyle{cug@pagestyle}{%
+\fancypagestyle{cug@pagestyle}{% 每一页的页眉
     \pagestyle{fancy}
     \fancyhf{}
-    \fancyhead[CO]{\cug@wuhao 中国地质大学\cug@@titlelogo}
+    \fancyhead[CO]{\cug@wuhao 中国地质大学自动化学院: \cug@@titlelogo}
     \fancyhead[RO, LE]{\cug@wuhao \thepage}
     \fancyhead[CE]{\cug@wuhao \@author: \@title}
     \renewcommand{\headrulewidth}{0.4pt}
@@ -532,12 +532,8 @@
     \cug@make@authorcv
 }
 \newcommand{\makeabstract}{%
-    \ifcug@bachelor
-        \cug@make@abstract
-    \else
         \cug@make@abstract
         \cug@make@enabstract
-    \fi
 }
 
 \renewcommand{\@cftmaketoctitle}{%
@@ -619,11 +615,11 @@
 
 \renewcommand{\contentsname}{目\quad 录}
 
-\newcommand{\makefrontpages}{%
+\newcommand{\makefrontpages}{% % 创建页面时执行的命令
     \maketitle
     \emptymatter 
-    \makeextrapages 
-    \makeauthorcv
+    % \makeextrapages 展示一些诚信页面
+    % \makeauthorcv 展示cv
     \makeabstract 
     \tableofcontents 
     \thispagestyle{empty}
